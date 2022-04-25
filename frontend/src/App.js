@@ -18,6 +18,7 @@ import { loadUser } from "./Actions/User";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import Account from "./components/Account/Account";
+import Register from "./components/Register";
 
 
 function App() {
@@ -37,6 +38,10 @@ function App() {
           element={isAuthenticated ? <Account /> : <Login />}
         /> */}
         {/* <Route path="/" element={<MainPage />} /> */}
+        <Route
+          path="/register"
+          element={isAuthenticated ? <MainPage /> : <Register />}
+        />
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<SignUp />} />
         <Route path="/friend" element={<FriendProfile />} />
